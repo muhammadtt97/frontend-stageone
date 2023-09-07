@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 data-testid="muhammadtt97">Muhammad Alameen Adamu</h1>
+        <img src="https://ca.slack-edge.com/T05FFAA91JP-U05RA5WNYQJ-3e3bd3ac0497-72" alt="muhammadtt97" data-testid="slackDisplayImage">
+        <p data-testid="currentDayOfTheWeek">Monday</p>
+        <p data-testid="currentUTCTime">1631036821000</p>
+        <p data-testid="myTrack">Frontend</p>
+        <a href="https://github.com/muhammadtt97/" data-testid="githubURL">My GitHub Repository</a>
+    </div>
+
+    <script>
+        function getCurrentDayOfWeek() {
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const currentDate = new Date();
+            const dayIndex = currentDate.getUTCDay();
+            return daysOfWeek[dayIndex];
+        }
+
+        function getCurrentUTCTime() {
+            return Date.now();
+        }
+
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = getCurrentDayOfWeek();
+        document.querySelector('[data-testid="currentUTCTime"]').textContent = getCurrentUTCTime();
+    </script>
+</body>
+</html>
